@@ -1,28 +1,37 @@
 # Sslviewer
 
+![Language](https://img.shields.io/badge/Java-17+-ED8B00?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![Purpose](https://img.shields.io/badge/Purpose-Education-blue?style=flat-square)
+
 Certificate information viewer.
 
 School Purpose Only.
 
 ## Overview
 
-Sslviewer is a focused educational cybersecurity utility built with Java. It is designed for defensive learning, local analysis, and authorized administration tasks. The project keeps the workflow simple, readable, and practical so students can understand how the tool works without digging through unnecessary framework code.
+Sslviewer is a polished educational cybersecurity utility by LayerByte. It focuses on one practical defensive concept and keeps the implementation small enough for students to read, run, and understand.
 
-## Features
+Certificate inspection is a practical way to learn trust chains, validity periods, and TLS identity.
 
-- Clean project layout with a focused purpose
-- Defensive, read-only analysis where applicable
-- Input validation with clear user feedback
-- Graceful error handling for common mistakes
-- Copy-friendly terminal or application output
-- MIT licensed for simple educational reuse
+## Highlights
 
-## Supported Operations
+- Displays certificate fields
+- Shows validity dates
+- Keeps output readable for reports
 
-- Validate user-provided input before processing
-- Analyze local files, text, logs, network metadata, or configuration data depending on the project goal
-- Print or display structured results in a beginner-readable format
-- Avoid destructive actions, credential collection, exploitation, brute forcing, or malware behavior
+## Feature Set
+
+- Clear command-line or local application workflow
+- Beginner-readable validation and error handling
+- Copy-friendly output for notes, screenshots, and reports
+- Conservative behavior designed around local or authorized data
+- No exploit code, malware behavior, credential theft, brute forcing, or destructive actions
+
+## Supported Inputs
+
+- Hostnames
+- Certificates available through a TLS connection
 
 ## Requirements
 
@@ -30,7 +39,14 @@ Sslviewer is a focused educational cybersecurity utility built with Java. It is 
 
 ## Installation
 
-Clone the repository, open the project folder, and install or build with the standard toolchain:
+Clone the repository and open the project folder:
+
+```bash
+git clone https://github.com/LayerByte/sslviewer.git
+cd sslviewer
+```
+
+Then prepare the project with the standard toolchain:
 
 ```bash
 javac src/main/java/*.java
@@ -38,49 +54,71 @@ javac src/main/java/*.java
 
 ## Usage
 
-Run the project from the repository root:
+Start with the help command or the default run command:
 
 ```bash
 java -cp src/main/java Main --help
 ```
 
-## Example
+## Example Workflow
 
-```text
-Start the tool, provide a local file, host, URL, log, or configuration sample when requested, then review the generated report.
-```
+1. Open the project folder.
+2. Run the help command.
+3. Provide a small authorized sample input.
+4. Review the report and compare it with the source code.
 
-## Learning Objectives
-
-- Understand one practical defensive security concept
-- Practice safe input handling and readable error messages
-- Learn how small security tools are structured
-- Compare language-specific approaches to files, text, networking, or system data
-- Build habits for authorized and ethical analysis only
-
-## Security Notes
-
-- Use this project only on systems, files, and data you own or have permission to inspect.
-- Do not paste real secrets into command-line arguments or screenshots.
-- Review output before sharing because paths, hostnames, and sample data may be sensitive.
-- Network-focused tools use normal platform behavior and should not be used for scanning targets without permission.
-
-## Development
-
-Keep input parsing separate from analysis logic and use clear exception handling.
-
-Suggested local checks:
+Example run:
 
 ```bash
-# Run the project help command first.
-# Then test with a small, non-sensitive sample input.
+java -cp src/main/java Main --help
 ```
+
+## Expected Output
+
+Certificate details for authorized review.
+
+Output is intended to be readable in the terminal or application window and easy to copy into a school report or defensive analysis note.
+
+## Safety Scope
+
+- Use only on systems, files, domains, and data you own or have permission to inspect.
+- Treat paths, hostnames, hashes, and log entries as potentially sensitive before sharing output.
+- Prefer small sample files when learning how the tool works.
+- Do not use the project for unauthorized scanning, exploitation, credential attacks, persistence, evasion, or destructive activity.
+
+## Learning Goals
+
+- Practice safe input validation and graceful error messages.
+- Understand the defensive concept behind the tool.
+- Learn how a focused security utility is organized in Java.
+- Compare raw input with structured output.
+- Build habits around permission, documentation, and responsible testing.
+
+## Development Notes
+
+Keep command parsing separate from analysis logic, use clear exceptions, and keep output predictable.
+
+Suggested checks before publishing changes:
+
+```bash
+# Run the help command.
+# Test with a small non-sensitive sample.
+# Confirm errors are clear when input is missing or invalid.
+```
+
+## Troubleshooting
+
+- If the command is not found, confirm the required toolchain is installed and available in your PATH.
+- If a file cannot be opened, check the path, permissions, and whether another program is locking it.
+- If a network-focused check fails, verify the hostname, scheme, connection, and permission to test that endpoint.
+- If output looks empty, retry with a smaller known-good sample input.
 
 ## Known Limitations
 
-- Built for education and small local workflows, not enterprise monitoring.
-- Results depend on operating system permissions and available platform APIs.
-- Some projects intentionally avoid advanced features to keep the code beginner-readable.
+- Built for education and small authorized workflows, not enterprise monitoring.
+- Results depend on operating system permissions, platform APIs, and sample quality.
+- Some advanced features are intentionally omitted to keep the code approachable.
+- Findings should be reviewed by a human before making security decisions.
 
 ## Disclaimer
 
