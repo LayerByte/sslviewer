@@ -1,0 +1,15 @@
+description.lua
+topics.lua
+.git/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+target/
+.gradle/
+*.class
+*.jar
+*.war
+*.ear
+
